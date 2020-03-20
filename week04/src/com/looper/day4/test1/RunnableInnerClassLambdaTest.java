@@ -17,11 +17,13 @@ public class RunnableInnerClassLambdaTest {
         thread1.start();
 
         //Lambda表达式
-        Runnable runnable2 = ()->{
+        /*Runnable runnable2 = ()->{
                 System.out.println(Thread.currentThread().getName()+"2233");
-        };
+        };*/
 
-        Thread thread2 = new Thread(runnable1,"线程1：");
+        Thread thread2 = new Thread(()->
+            System.out.println(Thread.currentThread().getName()+"2233")
+        ,"线程2：");
 
         thread2.start();
 

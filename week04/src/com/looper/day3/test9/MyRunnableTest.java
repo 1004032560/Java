@@ -12,6 +12,11 @@ public class MyRunnableTest {
         Thread thread1 = new Thread(myRunnable1,"线程1");
         Thread thread2 = new Thread(myRunnable2);
 
+        System.out.println(Thread.currentThread().getName());
+
+        thread1.setPriority(7);
+        thread1.getPriority();
+
         //启动线程
         thread1.start();
         thread2.start();
