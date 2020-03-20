@@ -1,4 +1,4 @@
-package com.looper;
+package com.looper.day1.test1;
 
 /**
  * 成员内部类

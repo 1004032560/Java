@@ -1,7 +1,7 @@
-package com.looper.test5;
+package com.looper.day1.test5;
 
 /**
- * 局部内部类
+ * 方法内部类
  */
 
 public class OuterClass {

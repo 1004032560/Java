@@ -1,4 +1,4 @@
-package com.looper.test3;
+package com.looper.day1.test3;
 
 //检查接口是不是函数式接口
 @FunctionalInterface
