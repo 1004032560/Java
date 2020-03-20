@@ -1,5 +1,9 @@
 package com.looper.day1.test1;
 
+/**
+ *  成员内部类调用
+ */
+
 public class OuterClassTest {
 
     public static void main(String[] args) {
