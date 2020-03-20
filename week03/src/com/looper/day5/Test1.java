@@ -4,6 +4,7 @@ public class Test1 {
 
     public static void main(String[] args) {
 
+
         Student student1 = new Student(1001,"zl");
         System.out.println("学生个数是："+student1.count);
 

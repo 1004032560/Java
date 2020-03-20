@@ -21,7 +21,7 @@ public class Student {
     }
 
     public static void showCount(){
-        System.out.println("学生个数是："+count);
+        System.out.println("学生总个数是："+count);
     }
 
     public static void main(String[] args) {
