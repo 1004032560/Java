@@ -1,5 +1,9 @@
 package com.looper.day1.test3;
 
+/**
+ * 匿名内部类
+ */
+
 //检查接口是不是函数式接口
 @FunctionalInterface
 public interface IFly {

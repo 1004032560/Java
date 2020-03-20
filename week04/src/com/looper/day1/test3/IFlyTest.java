@@ -1,5 +1,9 @@
 package com.looper.day1.test3;
 
+/**
+ * 匿名内部类
+ */
+
 public class IFlyTest {
 
     public static void main(String[] args) {
