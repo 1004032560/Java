@@ -1,4 +1,4 @@
-package com.looper.test1;
+package com.looper.day1;
 
 public class A {
     public A(){

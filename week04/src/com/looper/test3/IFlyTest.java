@@ -1,4 +1,4 @@
-package com.looper.day1.test3;
+package com.looper.test3;
 
 public class IFlyTest {
 

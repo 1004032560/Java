@@ -1,7 +1,7 @@
-package com.looper.test2.dao.impl;
+package com.looper.day1.test2.dao.impl;
 
-import com.looper.test2.dao.ProductDao;
-import com.looper.test2.domain.User;
+import com.looper.day1.test2.dao.ProductDao;
+import com.looper.day1.test2.domain.User;
 
 public class ProductDaoImplement implements ProductDao {
 

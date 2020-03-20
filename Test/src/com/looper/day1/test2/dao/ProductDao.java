@@ -1,6 +1,6 @@
-package com.looper.test2.dao;
+package com.looper.day1.test2.dao;
 
-import com.looper.test2.domain.User;
+import com.looper.day1.test2.domain.User;
 
 public interface ProductDao {
 

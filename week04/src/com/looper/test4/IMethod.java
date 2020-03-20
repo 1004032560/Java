@@ -1,4 +1,4 @@
-package com.looper.day1.test4;
+package com.looper.test4;
 
 public interface IMethod {
 

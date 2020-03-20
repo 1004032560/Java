@@ -1,4 +1,4 @@
-package com.looper.test1;
+package com.looper.day1;
 
 public class Example {
     public static void main(String[] args) {

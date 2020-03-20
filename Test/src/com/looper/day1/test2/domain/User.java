@@ -1,4 +1,4 @@
-package com.looper.test2.domain;
+package com.looper.day1.test2.domain;
 
 public class User {
 

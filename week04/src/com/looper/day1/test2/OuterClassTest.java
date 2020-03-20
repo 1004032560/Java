@@ -1,7 +1,5 @@
 package com.looper.day1.test2;
 
-import com.looper.day1.test2.OuterClass;
-
 public class OuterClassTest {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.looper.day1.test1;
+package com.looper;
 
 public class OuterClassTest {
 

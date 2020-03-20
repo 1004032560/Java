@@ -1,4 +1,4 @@
-package com.looper.day1.test5;
+package com.looper.test5;
 
 /**
  * 局部内部类
