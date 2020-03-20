@@ -1,26 +1,26 @@
 package com.looper.day5.test3;
 
-public class Resource {
+public class Resource2 {
 
-    public synchronized void f1(){
-        //synchronized (new Object()){
+    public void f1(){
+        synchronized (new Object()){
             for (int i=0;i<10;i++){
                 System.out.println(Thread.currentThread().getName()+":i="+i);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-        //}
+        }
     }
 
-    public synchronized void m1(){
+    public void m1(){
         synchronized (new Object()) {
             for (int i = 0; i < 10; i++) {
                 System.out.println(Thread.currentThread().getName() + ":i=" + i);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -31,7 +31,7 @@ public class Resource {
     public static void main(String[] args) {
 
         //synchronized方法锁的是一个对象，只有f1执行完了才会执行m1
-        Resource resource = new Resource();
+        Resource2 resource = new Resource2();
 
         Thread thread1 = new Thread(() -> {
                 resource.f1();
