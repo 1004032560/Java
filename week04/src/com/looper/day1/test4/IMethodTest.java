@@ -1,5 +1,9 @@
 package com.looper.day1.test4;
 
+/**
+ * Lambda表达式实现匿名内部类
+ */
+
 public class IMethodTest {
 
     public static void main(String[] args) {
