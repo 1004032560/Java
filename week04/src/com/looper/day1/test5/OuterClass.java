@@ -46,7 +46,7 @@ public class OuterClass {
     }
 
     public void fly(){
-        System.out.println("飞翔");
+        System.out.println("小鸟飞翔");
     }
 
 }
