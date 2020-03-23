@@ -27,7 +27,7 @@ public class IntrospectorTest1 {
         System.out.println("属性的信息如下：");
         for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
             //获取name属性的set方法
-            if ("name".equals(propertyDescriptor.getName())){//找到了属性
+            if ("name".equals(propertyDescriptor.getName())){
                 System.out.println("==================");
                 Method method = propertyDescriptor.getWriteMethod();
                 //执行
@@ -36,7 +36,7 @@ public class IntrospectorTest1 {
             }
 
             //获取name属性的get方法
-            if ("name".equals(propertyDescriptor.getName())){//找到了属性
+            if ("name".equals(propertyDescriptor.getName())){
                 System.out.println("==================");
                 Method method = propertyDescriptor.getReadMethod();
                 //System.out.println(method);
