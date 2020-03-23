@@ -1,15 +1,15 @@
-package com.looper.day1.test2;
+package com.looper.day1.test3;
 
 public class Student {
 
     private int id;
-    private String name;
+    private int name;
+    private String address;//属性如果没有get或者set方法，内省机制则不会检测
 
-    //在反射中，空构造必须写
     public Student() {
     }
 
-    public Student(int id, String name) {
+    public Student(int id, int name) {
         this.id = id;
         this.name = name;
     }
@@ -22,11 +22,11 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
+    public int getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(int name) {
         this.name = name;
     }
 
@@ -34,15 +34,8 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name=" + name +
+                ", address='" + address + '\'' +
                 '}';
     }
-
-    public String show(String name,int id) {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
 }
