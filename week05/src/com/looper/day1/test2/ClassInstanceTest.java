@@ -2,7 +2,7 @@ package com.looper.day1.test2;
 
 import java.lang.reflect.Method;
 
-public class ClassTest {
+public class ClassInstanceTest {
 
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
 
