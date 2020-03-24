@@ -1,4 +1,4 @@
-package com.looper.day2.test;
+package com.looper.day2.test4;
 
 import com.looper.day2.domain.Animal;
 import com.looper.day2.domain.Fish;
