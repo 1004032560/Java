@@ -7,8 +7,10 @@ public class TrafficLight {
     public TrafficLight(Signal color) {
         this.color = color;
 
-    }//信号灯变化的方法   红灯-绿灯-黄灯-红灯
-    public void  change(){
+    }
+
+    //信号灯变化的方法   红灯-绿灯-黄灯-红灯
+    public void change(){
         System.out.println("当前灯的颜色："+color);
         switch(color){
             case RED:

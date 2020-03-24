@@ -5,6 +5,7 @@ public class TrafficLightTest {
         TrafficLight tl = new  TrafficLight(Signal.RED);
         // TrafficLight tl = new  TrafficLight("hello");//编译不通过，比较安全
 
+
         tl.change();
         tl.change();
         tl.change();
