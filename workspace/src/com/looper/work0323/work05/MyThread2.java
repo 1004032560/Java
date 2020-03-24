@@ -7,6 +7,7 @@ public class MyThread2 implements Runnable {
         for (int i = 100; i >= 0; i--) {
             synchronized (TestMyThread.object){
                 System.out.println(i);
+                TestMyThread.object.notify();
                 try {
                     TestMyThread.object.wait();
                 } catch (InterruptedException e) {

@@ -1,4 +1,4 @@
-package com.looper.day2.test1;
+package com.looper.day2;
 
 /**
  * 绑定成员态方法
