@@ -6,7 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ *
  * 自定义注解
+ *
  */
 //自定义的注解的修饰目标   是类、接口、枚举
 @Target(value = ElementType.TYPE)
