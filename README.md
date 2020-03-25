@@ -65,6 +65,10 @@
 
 9、`Java`中的数组是**协变**的
 
+10、在泛型类中使用泛型的方法无需再声明泛型
+
+11、泛型通配符：`<? extends Fruit>,<? super T>,<?>`
+
 #### Ⅳ 枚举
 
 
@@ -73,7 +77,27 @@
 
 #### Ⅴ 注解
 
+1、注解的定义和作用
 
+2、注解的形式
+
+3、@Target
+
+- 类或接口：`ElementType.TYPE`
+- 字段：`ElementType.FIELD`
+- 方法：`ElementType.METHOD`
+- 构造方法：`ElementType.CONSTRUCTOR`
+- 方法参数：`ElementType.PARAMETER`
+
+4、@Retention
+
+- 仅编译期：`RetentionPolicy.SOURCE`
+- 仅`class`文件：`RetentionPolicy.CLASS`
+- 运行期：`RetentionPolicy.RUNTIME`
+
+5、@Override
+
+6、@FunctionInterface
 
 
 
