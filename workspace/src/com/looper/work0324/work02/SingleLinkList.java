@@ -56,21 +56,26 @@ public class SingleLinkList {
             System.out.println("学生排行榜为空,该学生不存在");
         }else{
             Student temp = head.getNext();
-            Student up = head;
+            Student up = head; //保存遍历对象的前一项数据
             boolean flag = false;
-            if (temp.getId()==id){
-                up.setNext(temp.getNext());
-                flag = true;
-            }else{
-                while (temp.getNext()!=null){
-                    if(temp.getNext().getId()==id){
-                        up = temp.getNext().getNext();
+            while(true){
+                if (temp == null){
+                    //flag = true;
+                    break;
+                }else{
+                    if (temp.getId() == id) {
+                        Student next = temp.getNext();
+                        System.out.println("下" + next);
+                        System.out.println("上" + up);
+                        up.setNext(next);
                         System.out.println("删除成功");
-                        flag = true;
                     }
-                    up = temp.getNext();
+                    //检查下一项
+                    temp = temp.getNext();
+                    up = up.getNext();
                 }
             }
+
 
             if (flag){
                 System.out.println("ID错误,该学生未找到");

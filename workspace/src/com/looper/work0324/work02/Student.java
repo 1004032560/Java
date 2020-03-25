@@ -1,5 +1,9 @@
 package com.looper.work0324.work02;
 
+/**
+ * 单链表
+ */
+
 public class Student {
 
     private int id;
