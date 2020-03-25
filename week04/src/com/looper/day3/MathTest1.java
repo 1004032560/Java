@@ -1,4 +1,4 @@
-package com.looper.day3.test1;
+package com.looper.day3;
 
 public class MathTest1 {
 
