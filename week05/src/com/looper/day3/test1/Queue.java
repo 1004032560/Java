@@ -23,7 +23,7 @@ public class Queue {
 
     //队列为空的判断
     public boolean isEmpty(){
-        return front == rear+1;//队头和队尾相等时，队列为空
+        return front >= rear;//队头和队尾相等时，队列为空
     }
 
     //入队

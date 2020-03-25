@@ -8,12 +8,12 @@ public class QueueTest {
 
         queue.list();
 
-        /*queue.add(51);
+        queue.add(51);
         queue.add(23);
         queue.add(98);
         queue.add(57);
 
-        queue.list();*/
+        queue.list();
 
     }
 
