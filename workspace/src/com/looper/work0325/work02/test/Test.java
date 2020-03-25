@@ -1,25 +1,30 @@
-package com.looper.work0314.work2.test;
+package com.looper.work0325.work02.test;
 
-import com.looper.work0314.work2.dao.impl.BookDaoImpl;
-import com.looper.work0314.work2.dao.impl.UserDaoImpl;
-import com.looper.work0314.work2.domain.Book;
-import com.looper.work0314.work2.domain.User;
+import com.looper.work0325.work02.dao.impl.BookDaoImpl;
+import com.looper.work0325.work02.dao.impl.UserDaoImpl;
+import com.looper.work0325.work02.domain.Book;
+import com.looper.work0325.work02.domain.User;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
 
     public static void main(String[] args) {
 
-        BookDaoImpl bookDaoImpl = new BookDaoImpl();
-        UserDaoImpl userDaoImpl = new UserDaoImpl();
-
         Scanner scanner = new Scanner(System.in);
 
-        Book[] books = new Book[5];
-        books = bookDaoImpl.findAllBooks();
-        User[] users = new User[5];
-        users = userDaoImpl.findAllUsers();
+        UserDaoImpl userDaoImpl = new UserDaoImpl();
+        List<User> alUser = new ArrayList<>();
+
+        for (User allUser : userDaoImpl.findAllUsers()) {
+            System.out.println(allUser);
+        }
+
+        BookDaoImpl bookDaoImpl = new BookDaoImpl();
+        List<Book> alBook = new ArrayList<>();
+
 
 
         loop:while (true) {
@@ -37,7 +42,7 @@ public class Test {
                 String password = scanner.next();
                 System.out.println("========================");
                 loop1:
-                for (User user : users) {
+                for (User user : userDaoImpl.findAllUsers()) {
                     if (user==userDaoImpl.findUserByUsernameAndPassword(username,password)) {
                         System.out.println("登录成功！");
 
@@ -47,6 +52,7 @@ public class Test {
                                 System.out.println("       1、查询全部用户信息");
                                 System.out.println("       2、修改用户的角色 ");
                                 System.out.println("       3、查看全部的图书信息 ");
+                                System.out.println("       4、添加新书籍 ");
                                 System.out.println("       0、退出 ");
                                 System.out.println("========================");
 
@@ -56,7 +62,7 @@ public class Test {
                                 switch (num2) {
 
                                     case 1: {
-                                        for (User user1 : users) {
+                                        for (User user1 : userDaoImpl.findAllUsers()) {
                                             System.out.println(user1.toString());
                                         }
                                         break;
@@ -65,7 +71,7 @@ public class Test {
                                         System.out.print("请输入要修改角色的用户名：");
                                         String username1 = scanner.next();
 
-                                        for (User user1 : users) {
+                                        for (User user1 : userDaoImpl.findAllUsers()) {
                                             if (user1.getUsername() == username1) {
                                                 if (user1.getRole() == "admin") {
                                                     user1.setRole("common");
@@ -78,13 +84,33 @@ public class Test {
                                         break;
                                     }
                                     case 3: {
-                                        for (Book book : books) {
+                                        for (Book book : bookDaoImpl.findAllBooks()) {
                                             System.out.println(book.toString());
                                         }
                                         break;
                                     }
+                                    case 4:{
+                                        while(true){
+                                            System.out.print("请输入图书的ID：");
+                                            int id = scanner.nextInt();
+                                            System.out.print("请输入图书的名字：");
+                                            String name = scanner.next();
+                                            System.out.print("请输入图书的作者：");
+                                            String author = scanner.next();
+                                            Book book = new Book(id,name,author);
+                                            bookDaoImpl.addBook(book);
+                                            System.out.print("是否继续添加数据：");
+                                            String next = scanner.next();
+
+                                            if ("n".equals(next)){
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    }
+
                                     case 0: {
-                                        break loop;
+                                        break loop1;
                                     }
                                 }
                             }
@@ -103,7 +129,7 @@ public class Test {
                                 switch (num2) {
 
                                     case 1: {
-                                        for (Book book : books) {
+                                        for (Book book : bookDaoImpl.findAllBooks()) {
                                             System.out.println(book.toString());
                                         }
                                         break;
@@ -111,14 +137,12 @@ public class Test {
                                     case 2: {
                                         System.out.print("请输入要查找的书籍编号：");
                                         int num3 = scanner.nextInt();
-                                        Book[] books2 = bookDaoImpl.findBookByBid(num3);
+                                        Book book = bookDaoImpl.findBookByBid(num3);
 
-                                        if (books2 == null) {
+                                        if (book == null) {
                                             System.out.println("未找到该书籍");
                                         } else {
-                                            for (Book book : books2) {
-                                                System.out.println("书籍编号:" + book.getBid() + "\t 书籍名:" + book.getName() + "\t\t 作者:" + book.getAuthor());
-                                            }
+                                            System.out.println("书籍编号:" + book.getBid() + "\t 书籍名:" + book.getName() + "\t\t 作者:" + book.getAuthor());
 
                                         }
                                         break;
@@ -126,17 +150,20 @@ public class Test {
                                     case 3: {
                                         System.out.print("请输入要查找的书籍作者：");
                                         String author1 = scanner.next();
-                                        Book book2 = bookDaoImpl.findBooksByAuthor(author1);
+                                        List<Book> book = bookDaoImpl.findBooksByAuthor(author1);
 
-                                        if (book2 == null) {
-                                            System.out.println("未找到该书籍");
-                                        } else {
-                                            System.out.println("书籍编号:" + book2.getBid() + "\t 书籍名:" + book2.getName() + "\t\t 作者:" + book2.getAuthor());
+                                        for (Book book1 : book) {
+                                            if (book1 == null) {
+                                                System.out.println("未找到该书籍");
+                                            } else {
+                                                System.out.println("书籍编号:" + book1.getBid() + "\t 书籍名:" + book1.getName() + "\t\t 作者:" + book1.getAuthor());
+                                            }
                                         }
+
                                         break;
                                     }
                                     case 0: {
-                                        break loop;
+                                        break loop1;
                                     }
                                 }
 
@@ -144,20 +171,18 @@ public class Test {
 
                         }
 
-                    } else {
-                        System.out.println("=========登录界面=========");
-                        System.out.println("用户名或密码错误！是否继续登录？");
-                        System.out.println("       1、继续登录？");
-                        System.out.println("       0、退出？");
-                        System.out.println("========================");
-                        System.out.println("请输入选择：");
-                        int num1 = scanner.nextInt();
-                        if (num1 == 0) {
-                            break loop;
-                        } else {
-                            break loop1;
-                        }
                     }
+                }
+
+                System.out.println("=========登录界面=========");
+                System.out.println("用户名或密码错误！是否继续登录？");
+                System.out.println("       1、继续登录？");
+                System.out.println("       0、退出？");
+                System.out.println("========================");
+                System.out.println("请输入选择：");
+                int num1 = scanner.nextInt();
+                if (num1 == 0) {
+                    break loop;
                 }
             }else {
                 System.out.print("确认退出y/n：");

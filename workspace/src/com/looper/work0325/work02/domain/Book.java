@@ -1,4 +1,4 @@
-package com.looper.work0314.work2.domain;
+package com.looper.work0325.work02.domain;
 
 public class Book {
 
