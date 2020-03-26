@@ -18,14 +18,6 @@ public class UserDaoImpl implements UserDao {
         al.add(new User(1005,"ZXC","123456","common"));
     }
 
-    /*
-    public static void main(String[] args) {
-        for (User user : al) {
-            System.out.println(user);
-        }
-    }
-    */
-
     @Override
     public List<User> findAllUsers() {
         return al;
