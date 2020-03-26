@@ -1,4 +1,4 @@
-package com.looper.day4.test1;
+package com.looper.day4;
 
 public class RunnableInnerClassLambdaTest {
 
