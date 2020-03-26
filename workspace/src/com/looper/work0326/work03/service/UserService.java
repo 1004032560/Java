@@ -1,6 +1,6 @@
-package com.looper.work0326.work01.service;
+package com.looper.work0326.work03.service;
 
-import com.looper.work0326.work01.domain.User;
+import com.looper.work0326.work03.domain.User;
 
 import java.util.List;
 

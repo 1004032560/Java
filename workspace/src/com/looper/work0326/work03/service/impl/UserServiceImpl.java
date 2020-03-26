@@ -1,9 +1,9 @@
-package com.looper.work0326.work01.service.impl;
+package com.looper.work0326.work03.service.impl;
 
-import com.looper.work0326.work01.dao.UserDao;
-import com.looper.work0326.work01.dao.impl.UserDaoImpl;
-import com.looper.work0326.work01.domain.User;
-import com.looper.work0326.work01.service.UserService;
+import com.looper.work0326.work03.domain.User;
+import com.looper.work0326.work03.service.UserService;
+import com.looper.work0326.work03.dao.UserDao;
+import com.looper.work0326.work03.dao.impl.UserDaoImpl;
 
 import java.util.List;
 
@@ -29,6 +29,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> showAllUsers() {
-        return null;
+        return ud.findAllUsers();
     }
 }

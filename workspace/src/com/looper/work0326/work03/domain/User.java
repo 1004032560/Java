@@ -1,4 +1,4 @@
-package com.looper.work0326.work01.domain;
+package com.looper.work0326.work03.domain;
 
 public class User {
 

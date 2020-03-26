@@ -1,9 +1,10 @@
-package com.looper.work0326.work01.test;
+package com.looper.work0326.work03.test;
 
-import com.looper.work0326.work01.dao.impl.BookDaoImpl;
-import com.looper.work0326.work01.dao.impl.UserDaoImpl;
-import com.looper.work0326.work01.domain.Book;
-import com.looper.work0326.work01.domain.User;
+import com.looper.work0326.work03.dao.impl.BookDaoImpl;
+import com.looper.work0326.work03.domain.Book;
+import com.looper.work0326.work03.domain.User;
+import com.looper.work0326.work03.service.impl.UserServiceImpl;
+import com.looper.work0326.work03.dao.impl.UserDaoImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,14 +19,14 @@ public class Test {
         UserDaoImpl userDaoImpl = new UserDaoImpl();
         List<User> alUser = new ArrayList<>();
 
-        for (User allUser : userDaoImpl.findAllUsers()) {
+        /*for (User allUser : userDaoImpl.findAllUsers()) {
             System.out.println(allUser);
-        }
+        }*/
 
         BookDaoImpl bookDaoImpl = new BookDaoImpl();
         List<Book> alBook = new ArrayList<>();
 
-
+        UserServiceImpl userService = new UserServiceImpl();
 
         loop:while (true) {
             System.out.println("==========主菜单=========");
@@ -62,7 +63,7 @@ public class Test {
                                 switch (num2) {
 
                                     case 1: {
-                                        for (User user1 : userDaoImpl.findAllUsers()) {
+                                        for (User user1 : userService.showAllUsers()) {
                                             System.out.println(user1.toString());
                                         }
                                         break;

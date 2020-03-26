@@ -1,6 +1,6 @@
-package com.looper.work0326.work01.dao;
+package com.looper.work0326.work03.dao;
 
-import com.looper.work0326.work01.domain.Book;
+import com.looper.work0326.work03.domain.Book;
 
 import java.util.List;
 
