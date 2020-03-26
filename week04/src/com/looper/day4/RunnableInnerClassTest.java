@@ -31,7 +31,7 @@ public class RunnableInnerClassTest {
 
         thread1.start();
 
-        Thread thread2 = new Thread(myRunnable,"TestInnerClass线程2:");
+        Thread thread2 = new Thread(myRunnable,"TestInzcnerClass线程2:");
 
         thread2.start();
 
