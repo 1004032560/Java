@@ -121,9 +121,19 @@
 
 #### Ⅶ 集合
 
+1、Collection接口
 
+* List子接口
+  * ArrayList
+  * LinkedList
 
 ArrayList和LinkedList的区别
+
+* Set子接口
+  * HashSet
+  * 
+
+
 
 
 
