@@ -123,15 +123,19 @@
 
 1、Collection接口
 
-* List子接口
+* List子接口：有顺序不可重复
   * ArrayList
   * LinkedList
+  * Vector
 
 ArrayList和LinkedList的区别
 
-* Set子接口
+* Set子接口：无序可重复
   * HashSet
-  * 
+  * TreeSet
+  * EnumSet
+
+2、Map
 
 
 
