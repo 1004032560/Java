@@ -1,4 +1,4 @@
-package com.looper.day5.test1;
+package com.looper.day5;
 
 public class TicketTest {
 
