@@ -143,4 +143,6 @@ ArrayList和LinkedList的区别
 
 
 
-Ⅷ
+
+
+#### Ⅷ GC垃圾回收机制
