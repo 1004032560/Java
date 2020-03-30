@@ -11,50 +11,48 @@ import java.util.Scanner;
  * 服务器端
  */
 public class ServerSocketTest {
-
     public static void main(String[] args) throws IOException {
-
-        Scanner sc = new Scanner(System.in);
-
+        Scanner input = new Scanner(System.in);
+        //步骤1：创建ServerSocket对象
         ServerSocket ss = null;
         Socket s = null;
+        InputStream is = null;
+        OutputStream os = null;
 
-
-        //1.创建ServerSocket对象；65536个端口号；1024之前的尽量不要用
         ss = new ServerSocket(10086);
-        System.out.println("服务器启动了...");
+        System.out.println("服务启动了...");
 
         while (true) {
-            //2.监听客户端的请求
+            //步骤2：监听客户端的请求
             s = ss.accept();
-            System.out.println("监听到了客户端的请求:" + s);
-
-            //3.具体的操作(读或者写)
-            //服务器收到信息
-            InputStream is = s.getInputStream();
-            byte[] reqBuf = new byte[100];
-            int len = is.read(reqBuf);
-            String reqStr = new String(reqBuf, 0, len);
-            System.out.println("客户端的消息是:" + reqStr);
-
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            //System.out.println("监听到客户端请求：" + s);
+            //步骤3：读操作
+            is = s.getInputStream();
+            byte[] buf = new byte[100];
+            int len = is.read(buf);
+            String str = new String(buf, 0, len);
+            System.out.println("接收到客户端发送来的数据是：" + str);
+            if("byebye".equals(str)){
+                is.close();
+                s.close();
+                break;
             }
+            os = s.getOutputStream();
+            System.out.print("请输入您要发送的消息：");
+            String strBack = input.next();
+            if("byebye".equals(strBack)){
+                os.write(strBack.getBytes());
+                is.close();
+                os.close();
+                s.close();
+            }
+            os.write(strBack.getBytes());
 
-            //服务器发出响应
-            OutputStream os = s.getOutputStream();
-            System.out.print("请输入服务器要发送的信息:");
-            String str = sc.next();
-            String respStr = str;
-            os.write(respStr.getBytes());
-
-            //4.关闭资源；服务器尽量不要关闭
+            is.close();
+            os.close();
             s.close();
-            ss.close();
         }
 
-    }
 
+    }
 }

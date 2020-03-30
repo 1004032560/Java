@@ -10,40 +10,51 @@ import java.util.Scanner;
  * 客户端
  */
 public class SocketTest {
-
     public static void main(String[] args) throws IOException {
-
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         Socket s = null;
-
-        //1.创建Socket对象
-        s = new Socket("127.0.0.1", 10086);
+        OutputStream os = null;
+        InputStream is = null;
 
         while(true){
-            //2.操作
-            //向服务器发出请求
-            System.out.print("请输入客户端要发送的信息:");
-            String str = sc.next();
-            String reqStr = str;
-            //Socket中的数据输出流
-            OutputStream os = s.getOutputStream();
-            os.write(reqStr.getBytes());
+            //步骤1：创建Socket对象
+            s = new Socket("127.0.0.1", 10086);
 
-            //接收服务器请求
-            InputStream is = s.getInputStream();
-            byte[] respBuf = new byte[100];
-            int respLen = is.read(respBuf);
-            String respStr = new String(respBuf, 0, respLen);
-            System.out.println("服务端的消息是:" + respStr);
-            if ("886".equals(respStr)){
+            //步骤2：写操作
+            //String str = "你好，服务器!";
+            System.out.print("请输入您要发送的消息：");
+            String str = input.next();
+            if("byebye".equals(str)){
+                //获取字节输出流
+                os = s.getOutputStream();
+                os.write(str.getBytes());
+                //步骤3：关闭资源
+                os.close();
+                is.close();
+                s.close();
+                break;
+            }
+            //获取字节输出流
+            os = s.getOutputStream();
+            os.write(str.getBytes());
+
+            is = s.getInputStream();
+            byte[] buf = new byte[100];
+            int len = is.read(buf);
+            String strGet = new String(buf, 0, len);
+            System.out.println("接收到服务器返回的数据是：" + strGet);
+            if("byebye".equals(strGet)){
+                //步骤3：关闭资源
+                os.close();
+                is.close();
+                s.close();
                 break;
             }
 
-            //3.关闭资源
+            //步骤3：关闭资源
+            os.close();
+            is.close();
             s.close();
         }
-
     }
-
 }
-
