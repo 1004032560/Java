@@ -26,7 +26,11 @@ public class FileTest {
                     try {
                         FileReader fr = new FileReader(file);
                         BufferedReader br = new BufferedReader(fr);
-                        System.out.println(br.readLine());
+                        String str = br.readLine();
+                        while(str!=null){
+                            System.out.println(str);
+                            str = br.readLine();
+                        }
                         br.close();
                         fr.close();
                     } catch (IOException e) {
@@ -44,7 +48,7 @@ public class FileTest {
                         System.out.println("请输入存入文件的内容：");
                         String fileValue = scanner.next();
                         try {
-                            FileWriter fw = new FileWriter(file);
+                            FileWriter fw = new FileWriter(file,true);
                             BufferedWriter bw = new BufferedWriter(fw);
                             bw.newLine();
                             bw.write(fileValue);
