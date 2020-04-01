@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE student [
+        <!ELEMENT student (id,name,age,address)>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT age (#PCDATA)>
+        <!ELEMENT address (#PCDATA)>
+        ]>
+
+<student>
+    <id>101</id>
+    <name>张三</name>
+    <age>18</age>
+    <address>Hello World</address>
+</student>
