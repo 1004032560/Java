@@ -1,4 +1,4 @@
-package com.looper.work0330.work02.server;
+package com.looper.work0330.work02.server.test;
 
 import com.looper.work0330.work02.server.dao.impl.UserDaoImpl;
 import com.looper.work0330.work02.server.domain.User;
