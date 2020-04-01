@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+<!DOCTYPE note SYSTEM "note.dtd">
+
+<!--<!DOCTYPE note[                            -->
+<!--        <!ELEMENT note (from,to,head,body)>-->
+<!--        <!ELEMENT from (#PCDATA)>          -->
+<!--        <!ELEMENT to (#PCDATA)>            -->
+<!--        <!ELEMENT head (#PCDATA)>          -->
+<!--        <!ELEMENT body (#PCDATA)>          -->
+<!--        ]>                                 -->
+<!--内部的dtd验证-->
+
+
+<note>
+    <from>tom</from>
+    <to>lily</to>
+    <head>hello</head>
+    <body>Hello World</body>
+</note>

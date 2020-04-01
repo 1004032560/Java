@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="" ?>
+
+        <!--外部引用-->
+        <!ELEMENT note (from,to,head,body)>
+        <!ELEMENT from (#PCDATA)>
+        <!ELEMENT to (#PCDATA)>
+        <!ELEMENT head (#PCDATA)>
+        <!ELEMENT body (#PCDATA)>
