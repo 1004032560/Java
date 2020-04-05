@@ -2,7 +2,6 @@ package com.looper.day1.test2;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 public class ClassConstructorTest {
 
