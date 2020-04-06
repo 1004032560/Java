@@ -1,7 +1,6 @@
 package com.looper.day1.test11;
 
 import java.io.Serializable;
-import java.net.ServerSocket;
 
 public class User implements Serializable {
 
