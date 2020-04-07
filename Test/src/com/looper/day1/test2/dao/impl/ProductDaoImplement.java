@@ -5,7 +5,7 @@ import com.looper.day1.test2.domain.User;
 
 public class ProductDaoImplement implements ProductDao {
 
-    User [] users = new User[5];
+    User[] users = new User[5];
 
     static int index = 0;
 
