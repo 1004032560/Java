@@ -2,7 +2,7 @@ package com.looper.day01.test01;
 
 import javax.swing.*;
 
-public class Test {
+public class Swing {
 
     /**
      * 创建并显示GUI。出于线程安全的考虑，
